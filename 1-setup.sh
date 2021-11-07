@@ -39,7 +39,7 @@ timedatectl --no-ask-password set-ntp 1
 localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="en_US.UTF-8"
 
 # Set keymaps
-localectl --no-ask-password set-keymap us
+localectl --no-ask-password set-keymap es
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
@@ -62,7 +62,7 @@ PKGS=(
 'xorg-xkill'
 'xorg-xinit'
 'xterm'
-'plasma-desktop' # KDE Load second
+# 'plasma-desktop' # KDE Load second
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
 'ark' # compression
@@ -94,6 +94,7 @@ PKGS=(
 'dtc'
 'efibootmgr' # EFI boot
 'egl-wayland'
+'exa'
 'exfat-utils'
 'extra-cmake-modules'
 'filelight'
@@ -105,6 +106,8 @@ PKGS=(
 'gcc'
 'gimp' # Photo editing
 'git'
+'gnome'
+'gnome-extras'
 'gparted' # partition management
 'gptfdisk'
 'grub'
@@ -116,18 +119,18 @@ PKGS=(
 'haveged'
 'htop'
 'iptables-nft'
-'jdk-openjdk' # Java 17
-'kate'
-'kcodecs'
-'kcoreaddons'
-'kdeplasma-addons'
-'kde-gtk-config'
-'kinfocenter'
-'kscreen'
-'kvantum-qt5'
-'kitty'
-'konsole'
-'kscreen'
+# 'jdk-openjdk' # Java 17
+#'kate'
+#'kcodecs'
+#'kcoreaddons'
+#'kdeplasma-addons'
+#'kde-gtk-config'
+#'kinfocenter'
+#'kscreen'
+#'kvantum-qt5'
+#'kitty'
+#'konsole'
+#'kscreen'
 'layer-shell-qt'
 'libdvdcss'
 'libnewt'
@@ -156,7 +159,7 @@ PKGS=(
 'patch'
 'picom'
 'pkgconf'
-'plasma-nm'
+#'plasma-nm'
 'powerdevil'
 'powerline-fonts'
 'print-manager'
@@ -199,6 +202,12 @@ PKGS=(
 'zsh'
 'zsh-syntax-highlighting'
 'zsh-autosuggestions'
+'intellij-idea-ultimate-edition'
+'dbeaver'
+'lazygit'
+'npm'
+'docker'
+'docker-compose'
 )
 
 for PKG in "${PKGS[@]}"; do
