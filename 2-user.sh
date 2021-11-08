@@ -39,9 +39,7 @@ PKGS=(
 'nordic-theme'
 'noto-fonts-emoji'
 'papirus-icon-theme'
-'plasma-pa'
 'ocs-url' # install packages from websites
-'sddm-nordic-theme-git'
 'snapper-gui-git'
 'ttf-droid'
 'ttf-hack'
@@ -51,9 +49,8 @@ PKGS=(
 'snap-pac'
 )
 
-for PKG in "${PKGS[@]}"; do
-    yay -S --noconfirm $PKG
-done
+installpkg="yay -S $(printf "%s " "${PKGS[@]}") --noconfirm --needed"
+$installpkg
 
 export PATH=$PATH:~/.local/bin
 cp -r $HOME/ArchTitus/dotfiles/* $HOME/.config/

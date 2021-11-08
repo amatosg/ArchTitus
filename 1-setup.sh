@@ -66,7 +66,7 @@ PKGS=(
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
 'ark' # compression
-'audiocd-kio' 
+# 'audiocd-kio' 
 'autoconf' # build
 'automake' # build
 'base'
@@ -74,12 +74,14 @@ PKGS=(
 'bind'
 'binutils'
 'bison'
-'bluedevil'
+'gnome'
+'baobab' # A graphical directory tree analyzer
+# 'bluedevil'
 'bluez'
 'bluez-libs'
 'bluez-utils'
-'breeze'
-'breeze-gtk'
+# 'breeze'
+# 'breeze-gtk'
 'bridge-utils'
 'btrfs-progs'
 'celluloid' # video players
@@ -88,8 +90,8 @@ PKGS=(
 'cronie'
 'cups'
 'dialog'
-'discover'
-'dolphin'
+# 'discover'
+# 'dolphin'
 'dosfstools'
 'dtc'
 'efibootmgr' # EFI boot
@@ -97,7 +99,6 @@ PKGS=(
 'exa'
 'exfat-utils'
 'extra-cmake-modules'
-'filelight'
 'flex'
 'fuse2'
 'fuse3'
@@ -106,8 +107,6 @@ PKGS=(
 'gcc'
 'gimp' # Photo editing
 'git'
-'gnome'
-'gnome-extras'
 'gparted' # partition management
 'gptfdisk'
 'grub'
@@ -115,23 +114,10 @@ PKGS=(
 'gst-libav'
 'gst-plugins-good'
 'gst-plugins-ugly'
-'gwenview'
+# 'gwenview'# KDE
 'haveged'
 'htop'
 'iptables-nft'
-# 'jdk-openjdk' # Java 17
-#'kate'
-#'kcodecs'
-#'kcoreaddons'
-#'kdeplasma-addons'
-#'kde-gtk-config'
-#'kinfocenter'
-#'kscreen'
-#'kvantum-qt5'
-#'kitty'
-#'konsole'
-#'kscreen'
-'layer-shell-qt'
 'libdvdcss'
 'libnewt'
 'libtool'
@@ -149,18 +135,15 @@ PKGS=(
 'networkmanager'
 'ntfs-3g'
 'ntp'
-'okular'
+'evince'
 'openbsd-netcat'
 'openssh'
 'os-prober'
-'oxygen'
 'p7zip'
 'pacman-contrib'
 'patch'
 'picom'
 'pkgconf'
-#'plasma-nm'
-'powerdevil'
 'powerline-fonts'
 'print-manager'
 'pulseaudio'
@@ -172,15 +155,13 @@ PKGS=(
 'python-pip'
 'qemu'
 'rsync'
-'sddm'
-'sddm-kcm'
+# 'sddm' #  Plasma login manager :(
+# 'sddm-kcm'
 'snapper'
-'spectacle'
 'steam'
 'sudo'
 'swtpm'
 'synergy'
-'systemsettings'
 'terminus-font'
 'traceroute'
 'ufw'
@@ -195,7 +176,6 @@ PKGS=(
 'wine-gecko'
 'wine-mono'
 'winetricks'
-'xdg-desktop-portal-kde'
 'xdg-user-dirs'
 'zeroconf-ioslave'
 'zip'
@@ -208,12 +188,11 @@ PKGS=(
 'npm'
 'docker'
 'docker-compose'
+'gdm'
 )
 
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm --needed
-done
+installpkg="sudo pacman -S $(printf "%s " "${PKGS[@]}") --noconfirm --needed"
+$installpkg
 
 #
 # determine processor type and install microcode
