@@ -32,11 +32,11 @@ fi
 echo "-------------------------------------------------"
 echo "       Setup Language to US and set locale       "
 echo "-------------------------------------------------"
-sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/^#en_US.UTF-8 UTF-8/es_ES.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
-timedatectl --no-ask-password set-timezone America/Chicago
+timedatectl --no-ask-password set-timezone America/Lima
 timedatectl --no-ask-password set-ntp 1
-localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="en_US.UTF-8"
+localectl --no-ask-password set-locale LANG="es_ES.UTF-8" LC_TIME="es_ES.UTF-8"
 
 # Set keymaps
 localectl --no-ask-password set-keymap es
@@ -54,7 +54,7 @@ pacman -Sy --noconfirm
 echo -e "\nInstalling Base System\n"
 
 PKGS=(
-'mesa' # Essential Xorg First
+'mesa'
 'xorg'
 'xorg-server'
 'xorg-apps'
@@ -62,39 +62,32 @@ PKGS=(
 'xorg-xkill'
 'xorg-xinit'
 'xterm'
-# 'plasma-desktop' # KDE Load second
-'alsa-plugins' # audio plugins
-'alsa-utils' # audio utils
-'ark' # compression
-# 'audiocd-kio' 
-'autoconf' # build
-'automake' # build
+'alsa-plugins'
+'alsa-utils'
+'ark'
+'autoconf'
+'automake'
 'base'
 'bash-completion'
 'bind'
 'binutils'
 'bison'
 'gnome'
-'baobab' # A graphical directory tree analyzer
-# 'bluedevil'
-'bluez' # wtf? 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
+'baobab'
+'bluez'
 'bluez-libs'
 'bluez-utils'
-# 'breeze'
-# 'breeze-gtk'
 'bridge-utils'
 'btrfs-progs'
-'celluloid' # video players
+'celluloid'
 'cmatrix'
-'code' # Visual Studio code
+'code'
 'cronie'
 'cups'
 'dialog'
-# 'discover'
-# 'dolphin'
 'dosfstools'
 'dtc'
-'efibootmgr' # EFI boot
+'efibootmgr'
 'egl-wayland'
 'exa'
 'exfat-utils'
@@ -105,16 +98,15 @@ PKGS=(
 'fuseiso'
 'gamemode'
 'gcc'
-'gimp' # Photo editing
+'gimp'
 'git'
-'gparted' # partition management
+'gparted'
 'gptfdisk'
 'grub'
 'grub-customizer'
 'gst-libav'
 'gst-plugins-good'
 'gst-plugins-ugly'
-# 'gwenview'# KDE
 'haveged'
 'htop'
 'iptables-nft'
@@ -155,8 +147,6 @@ PKGS=(
 'python-pip'
 'qemu'
 'rsync'
-# 'sddm' #  Plasma login manager :(
-# 'sddm-kcm'
 'snapper'
 'steam'
 'sudo'
