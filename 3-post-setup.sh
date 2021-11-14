@@ -56,3 +56,4 @@ echo "
 ###############################################################################
 "
 echo "alias ll='exa --long --git --icons'" >> $HOME/.bashrc
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
