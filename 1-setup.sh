@@ -77,7 +77,7 @@ PKGS=(
 'gnome'
 'baobab' # A graphical directory tree analyzer
 # 'bluedevil'
-'bluez'
+'bluez'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
 'bluez-libs'
 'bluez-utils'
 # 'breeze'
@@ -197,12 +197,12 @@ $installpkg
 proc_type=$(lscpu | awk '/Vendor ID:/ {print $3}')
 case "$proc_type" in
 	GenuineIntel)
-		print "Installing Intel microcode"
+		echo "Installing Intel microcode"
 		pacman -S --noconfirm intel-ucode
 		proc_ucode=intel-ucode.img
 		;;
 	AuthenticAMD)
-		print "Installing AMD microcode"
+		echo "Installing AMD microcode"
 		pacman -S --noconfirm amd-ucode
 		proc_ucode=amd-ucode.img
 		;;
@@ -225,7 +225,7 @@ echo "username=$username" >> ${HOME}/ArchTitus/install.conf
 fi
 if [ $(whoami) = "root"  ];
 then
-    useradd -m -G wheel,libvirt -s /bin/bash $username 
+    useradd -m -G wheel -s /bin/bash $username 
 	passwd $username
 	cp -R /root/ArchTitus /home/$username/
     chown -R $username: /home/$username/ArchTitus
