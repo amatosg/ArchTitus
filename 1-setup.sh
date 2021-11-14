@@ -77,7 +77,7 @@ PKGS=(
 'gnome'
 'baobab' # A graphical directory tree analyzer
 # 'bluedevil'
-'bluez'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
+'bluez' # wtf? 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
 'bluez-libs'
 'bluez-utils'
 # 'breeze'
@@ -225,7 +225,7 @@ echo "username=$username" >> ${HOME}/ArchTitus/install.conf
 fi
 if [ $(whoami) = "root"  ];
 then
-    useradd -m -G wheel -s /bin/bash $username 
+    useradd -m -G wheel,libvirt -s /bin/bash $username 
 	passwd $username
 	cp -R /root/ArchTitus /home/$username/
     chown -R $username: /home/$username/ArchTitus
