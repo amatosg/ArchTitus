@@ -178,8 +178,13 @@ PKGS=(
 'gdm'
 )
 
-installpkg="sudo pacman -S $(printf "%s " "${PKGS[@]}") --noconfirm --needed"
-$installpkg
+#installpkg="sudo pacman -S $(printf "%s " "${PKGS[@]}") --noconfirm --needed"
+#$installpkg
+
+for PKG in "${PKGS[@]}"; do
+    echo "INSTALLING: ${PKG}"
+    sudo pacman -S "$PKG" --noconfirm --needed
+done
 
 #
 # determine processor type and install microcode
