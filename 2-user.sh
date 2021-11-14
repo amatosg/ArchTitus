@@ -49,8 +49,9 @@ PKGS=(
 'snap-pac'
 )
 
-installpkg="yay -S $(printf "%s " "${PKGS[@]}") --noconfirm --needed"
-$installpkg
+for PKG in "${PKGS[@]}"; do
+    yay -S --noconfirm $PKG
+done
 
 export PATH=$PATH:~/.local/bin
 cp -r $HOME/ArchTitus/dotfiles/* $HOME/.config/
