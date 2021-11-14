@@ -55,3 +55,4 @@ echo "
 # Done - Please Eject Install Media and Reboot
 ###############################################################################
 "
+echo "alias ll='exa --long --git --icons'" >> $HOME/.bashrc
